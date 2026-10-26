@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Date & Time</title>
+    <style>
+        article{
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            text-align: center;
+
+        }
+        div{
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>
+            <h2>Display Date & Time</h2>
+            <h3 id="date"></h3>
+            <h3 id="time"></h3>
+        </div>
+    </article>
+
+    <script>
+        function displayDateAndTime(){
+            var currentDate = new Date();
+
+            document.getElementById("date").innerHTML=
+            "Date: " + currentDate.toLocaleDateString();
+            document.getElementById("time").innerHTML=
+            "Time: " + currentDate.toLocaleTimeString();
+        }
+        displayDateAndTime();
+        setInterval(displayDateAndTime,100);
+    </script>
+</body>
+</html>
